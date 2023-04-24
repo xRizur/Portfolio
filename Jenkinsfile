@@ -12,8 +12,8 @@ pipeline {
                         remote = [:]
                         remote.name = 'remote'
 
-                        sshCommand remote: remote, command: 'cd nginx && git clone https://github.com/xRizur/FlaskProject'
-                        sshCommand remote: remote, command: 'docker build -t my-flask-app .'
+                        sshCommand remote: remote, command: 'cd ngninx && sudo git clone https://github.com/xRizur/FlaskProject'
+                        sshCommand remote: remote, command: 'sudo docker build -t my-flask-app .'
                      }
                 }
             }
