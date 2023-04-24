@@ -10,12 +10,6 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no -i $SSH_KEY $SSH_USERNAME@108.142.129.104 "docker-compose down && docker-compose up -d"'
                 }
             }
-        stage('Build') {
-            steps {
-                sh 'echo "Building.."'
-                sh 'pip install -r requirements.txt'
-            }
-        }
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t pyapp .'
