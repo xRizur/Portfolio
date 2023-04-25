@@ -13,7 +13,7 @@ pipeline {
                         remote.name = 'remote'
 
                         sshCommand remote: remote, command: 'sudo git clone https://github.com/xRizur/FlaskProject'
-                        sshCommand remote: remote, command: 'cd FlaskProject && sudo docker build -t my-flask-app .'
+                        sshCommand remote: remote, command: 'cd FlaskProject && sudo docker build -t my-flask-app . && "docker-compose down && docker-compose up -d"'
                      }
                 }
             }
