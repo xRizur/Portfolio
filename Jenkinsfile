@@ -11,7 +11,7 @@ pipeline {
                     ssh -o StrictHostKeyChecking=no -i $SSH_KEY $SSH_USERNAME@108.142.129.104
                         git clone https://github.com/xRizur/FlaskProject
                         cd FlaskProject &&
-                        sudo docker build -t my-flask-app . &&
+                        docker build -t my-flask-app . &&
                         docker-compose down &&
                         docker-compose up -d
                     '''
