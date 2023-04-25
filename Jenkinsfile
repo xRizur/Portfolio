@@ -12,7 +12,7 @@ pipeline {
                         rm -rf FlaskProject
                         git clone https://github.com/xRizur/FlaskProject
                         cd FlaskProject
-                        docker build -t my-flask-app .
+                        sudo docker build -t my-flask-app .
                         docker-compose down
                         docker-compose up -d
                     '''
