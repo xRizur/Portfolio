@@ -14,7 +14,8 @@ pipeline {
                         sudo docker build -t my-flask-app . &&
                         docker-compose down &&
                         docker-compose up -d"
-                    '''
+                    EOF
+                 '''
                 }
             }
         }
