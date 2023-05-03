@@ -1,3 +1,4 @@
+import com.hierynomus.sshj.SSHClient;
 pipeline {
     agent any
     environment {
