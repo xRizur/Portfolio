@@ -7,17 +7,17 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                sshCommand remote: [
-                    allowAnyHosts: true,
-                    credentialsId: 'azure-vm-ssh-credentials-id',
-                    host: "${AZURE_VM_PUBLIC_IP}",
-                    port: 22
-                ], command: '''
-                    git clone https://github.com/xRizur/FlaskProject.git
-                    cd FlaskProject
-                    docker build -t my-flask-app .
-                    docker-compose up -d
-                '''
+                script {
+                    sshagent(['azure-vm-ssh-credentials-id']) {
+                        sshScript remote: "ssh -o StrictHostKeyChecking=no -l xrizur ${AZURE_VM_PUBLIC_IP}",
+                            script: """
+                                git clone https://github.com/xRizur/FlaskProject.git
+                                cd FlaskProject
+                                docker build -t my-flask-app .
+                                docker-compose up -d
+                            """
+                    }
+                }
             }
         }
     }
