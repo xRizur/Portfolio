@@ -1,4 +1,3 @@
-import com.hierynomus.sshj.SSHClient
 pipeline {
     agent any
     environment {
@@ -8,21 +7,18 @@ pipeline {
     stages {
         stage('Deploy') {
             steps {
-                script {
-                    sshagent(['azure-vm-ssh-credentials-id']) {
-                        def sshClient = new SSHClient()
-                        sshClient.addHostKeyVerifier("aa:bb:cc:dd:ee:ff:gg:hh:ii:jj:kk:ll:mm:nn:oo:pp")
-                        sshClient.connect("${AZURE_VM_PUBLIC_IP}", 22)
-                        sshClient.auth(azureVmSshCredentials)
-                        sshClient.withSession { session ->
-                            session.exec("git clone https://github.com/xRizur/FlaskProject.git")
-                            session.exec("cd FlaskProject")
-                            session.exec("docker build -t my-flask-app .")
-                            session.exec("docker-compose up -d")
-                        }
-                    }
-                }
+                sshCommand remote: [
+                    allowAnyHosts: true,
+                    credentialsId: 'azure-vm-ssh-credentials-id',
+                    host: "${AZURE_VM_PUBLIC_IP}",
+                    port: 22
+                ], command: '''
+                    git clone https://github.com/xRizur/FlaskProject.git
+                    cd FlaskProject
+                    docker build -t my-flask-app .
+                    docker-compose up -d
+                '''
             }
         }
-        }
     }
+}
