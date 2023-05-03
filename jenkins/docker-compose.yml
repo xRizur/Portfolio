@@ -1,7 +1,7 @@
 version: '3'
 services:
   jenkins:
-    image: 'jenkins:latest'
+    image: 'jenkins/jenkins'
     restart: unless-stopped
     ports:
       - '8080:8080'
