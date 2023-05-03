@@ -1,21 +1,25 @@
 pipeline {
     agent any
+    environment {
+        AZURE_VM_SSH_CREDENTIALS = credentials('azure-vm-ssh-credentials-id')
+        AZURE_VM_PUBLIC_IP = '108.142.129.104'
+    }
     stages {
         stage('Deploy') {
-            when {
-                branch 'master'
-            }
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'ssh-credentials', keyFileVariable: 'SSH_KEY', passphraseVariable: '', usernameVariable: 'SSH_USERNAME')]) {
-                    sh '''
-                    ssh -o StrictHostKeyChecking=no -i $SSH_KEY xrizur@108.142.129.104
-                        rm -rf FlaskProject
-                        git clone https://github.com/xRizur/FlaskProject
-                        cd FlaskProject
-                        docker build -t my-flask-app .
-                        docker-compose down
-                        docker-compose up -d
-                    '''
+                script {
+                    sshagent(['azure-vm-ssh-credentials-id']) {
+                        def sshClient = new SSHClient()
+                        sshClient.addHostKeyVerifier("aa:bb:cc:dd:ee:ff:gg:hh:ii:jj:kk:ll:mm:nn:oo:pp")
+                        sshClient.connect("${AZURE_VM_PUBLIC_IP}", 22)
+                        sshClient.auth(azureVmSshCredentials)
+                        sshClient.withSession { session ->
+                            session.exec("git clone https://github.com/xRizur/FlaskProject.git")
+                            session.exec("cd FlaskProject")
+                            session.exec("docker build -t my-flask-app .")
+                            session.exec("docker-compose up -d")
+                        }
+                    }
                 }
             }
         }
