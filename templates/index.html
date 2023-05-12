@@ -1,10 +1,210 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Strona glowna</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+  <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+  </script>
+  <title>Personal Page</title>
 </head>
+
 <body>
-<h1>Pierwsza strona</h1>
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="">
+      <img src="../static/favicon-32x32.png" alt="logo"
+           style="width:40px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#collapse_Navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapse_Navbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#educational-info">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#Prof-skill">Professional Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#contact-us">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Carousel wrapper -->
+  <div id="carouselExampleControls" class="carousel slide text-center carousel-dark"
+       data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="mb-3">Maciej Pająk</h2>
+            <h5 class="mb-3">Devops Intern</h5>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Carousel wrapper -->
+
+
+  <div class="section" id="about">
+    <div class="container">
+      <div class="card aos-init aos-animate"
+           data-aos="fade-up" data-aos-offset="10">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <div class="card-body">
+              <div class="h4 mt-0 title">About</div>
+
+            <p>Second-year student of applied computer science. I have been learning devops related technology for several months now.
+              I am looking for an internship to gain experience in the field of devops. I am a fast learner and I am not afraid of new challenges.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="card-body">
+              <div class="h4 mt-0 title">Basic Information</div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <strong class="text-uppercase">
+                    Age:
+                  </strong></div>
+                <div class="col-sm-8">21</div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-sm-4">
+                  <strong class="text-uppercase">
+                    Email:
+                  </strong></div>
+                <div class="col-sm-8">maciej8pajak8@gmail.com</div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-sm-4">
+                  <strong class="text-uppercase">
+                    Phone:
+                  </strong></div>
+                <div class="col-sm-8"></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-sm-4">
+                  <strong class="text-uppercase">
+                    Language:
+                  </strong></div>
+                <div class="col-sm-8">English (B2) <br>  Polish (Native)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="skill">
+    <div class="container my-2">
+      <div class="h4 text-center mb-4 title" id="educational-info">
+        Education
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="card-body">
+          <div class="h5">Bachelor's Degree in Applied Computer Sience</div>
+          <div class="h6">2021 - 2024   Jagiellonian University</div>
+          <p>Faculty of physics, Astronomy and Applied computer sience</p>
+
+
+          <p>
+            <b>Projects:</b><br>
+          <ul>
+            <li>Sfi Academic It festival</li>
+          </ul>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="skill">
+    <div class="container my-2">
+      <div class="h4 text-center mb-4 title" id="Prof-skill">Technology Stack</div>
+      <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="card-body">
+          <b>Programming Languages:</b> Python, C++, Java, Bash (basics)<br><br>
+          <b>Public Cloud:</b> GCP(made course) , Azure (Learning now, basics)<br><br>
+          <b>Containers:</b> Docker, Kubernetes (beginner level)<br><br>
+          <b>Infrastructure as a Code:</b> Terraform (beginner level)<br><br>
+          <b>Version control :</b> Github<br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-1 pb-0">
+    <p> You can find me on:</p>
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/maciej.pajak.372" role="button" target="_blank">
+        <i class="fab fa-facebook" style="color: #3b5998;"></i>
+      </a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/maciej-paj%C4%85k-b5516026b/" role="button" target="_blank"
+        ><i class="fab fa-linkedin-in"></i></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/xRizur/" role="button" target="_blank"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Maciej Pająk
+  </div>
+  <!-- Copyright -->
+</footer>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
 </body>
+
 </html>
