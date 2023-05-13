@@ -25,3 +25,5 @@ services:
       my-network:
         aliases:
           - flask-app
+networks:
+  my-network:
