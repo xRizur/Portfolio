@@ -6,6 +6,9 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-
+#teraz stworz nastepna podstrone ktora zwroci template o nazwie about.html
+@app.route('/devops-project')
+def about():
+    return render_template('devops-project.html')
 if __name__ == '__main__':
     app.run(debug=True)
