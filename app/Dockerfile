@@ -14,7 +14,7 @@ COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
 # Copy all the flask project files into the WORKDIR
-COPY .. .
+COPY . .
 
 # Run the app.py file
 CMD python3 app.py
