@@ -2,7 +2,6 @@
 FROM python:alpine
 
 #  Expose the port 5000 of the docker container
-EXPOSE 5000
 
 # Create a folder app in container and work inside it
 WORKDIR /app
