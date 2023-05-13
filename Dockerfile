@@ -8,4 +8,4 @@ ADD app $CONTAINER_HOME
 WORKDIR $CONTAINER_HOME
 
 CMD ["ls", "-la"]
-RUN pip install -r ./requirements.txt
+RUN pip install -r $CONTAINER_HOME/requirements.txt
