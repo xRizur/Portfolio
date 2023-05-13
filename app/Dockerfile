@@ -8,7 +8,7 @@ EXPOSE 5000
 WORKDIR /app
 
 # Copy the requirements.txt file into the WORKDIR
-COPY ../requirements.txt .
+COPY requirements.txt .
 
 # Install all the requirements
 RUN pip3 install -r requirements.txt
