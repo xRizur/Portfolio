@@ -1,8 +1,20 @@
-FROM python:3.8
+#Using the python alpine image
+FROM python:alpine
 
+#  Expose the port 5000 of the docker container
+EXPOSE 5000
+
+# Create a folder app in container and work inside it
+WORKDIR /app
+
+# Copy the requirements.txt file into the WORKDIR
 COPY requirements.txt .
-RUN pip install -r requirements.txt
 
-COPY main.py .
+# Install all the requirements
+RUN pip3 install -r requirements.txt
 
-CMD FLASK_APP=app python -m flask run --host=0.0.0.0
+# Copy all the flask project files into the WORKDIR
+COPY . .
+
+# Run the app.py file
+CMD python3 app.py
