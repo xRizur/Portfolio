@@ -1,12 +1,10 @@
 version: '3'
 services:
   jenkins:
-    image: 'jenkins/jenkins'
+    image: 'santhoshkdhana/jenkins-python3.9'
     restart: unless-stopped
     ports:
       - '8080:8080'
-      - '8443:8443'
-      - '50000:50000'
 
     volumes:
       - 'jenkins_data:/bitnami/jenkins'

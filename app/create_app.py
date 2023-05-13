@@ -12,3 +12,7 @@ def create_app():
         return render_template('devops-project.html')
 
     return app
+
+if __name__ == '__main__':
+    app = create_app()
+    app.run(debug=True)
