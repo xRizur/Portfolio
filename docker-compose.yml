@@ -1,18 +1,6 @@
 version: '3.7'
 
 services:
-  flask:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    container_name: flask
-    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "app.create_app:create_app()"
-    volumes:
-      - ./:/var/www
-    networks:
-      my-network:
-        aliases:
-          - flask-app
   nginx:
     container_name: nginx
     build: nginx
@@ -25,3 +13,15 @@ services:
       - my-network
     depends_on:
       - flask
+  flask:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: flask
+    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "app.create_app:create_app()"
+    volumes:
+      - ./:/var/www
+    networks:
+      my-network:
+        aliases:
+          - flask-app
