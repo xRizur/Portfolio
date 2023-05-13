@@ -7,7 +7,6 @@ def create_app():
     @app.route('/')
     def index():
         return render_template('index.html')
-
     @app.route('/devops-project')
     def about():
         return render_template('devops-project.html')
