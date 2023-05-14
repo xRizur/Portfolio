@@ -4,10 +4,13 @@ services:
   nginx:
     build:
       context: ./
-      dockerfile: Dockerfile_nginx
+      dockerfile: nginx.dockerfile
     container_name: nginx
+    volumes:
+      - ./:/var/www/html
+      - ./default.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - "80:80"
+      - 80:80
     networks:
       - my-network
     depends_on:
