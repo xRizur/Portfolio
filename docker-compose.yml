@@ -2,13 +2,12 @@ version: '3.7'
 
 services:
   nginx:
+    build:
+      context: ./
+      dockerfile: nginx.dockerfile
     container_name: nginx
-    image: nginx:latest
-    volumes:
-      - ./:/var/www/html
-      - ./default.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - 80:80
+      - "80:80"
     networks:
       - my-network
     depends_on:
