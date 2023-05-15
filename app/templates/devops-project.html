@@ -6,10 +6,11 @@
     <div class="container my-2">
       <div class="h4 text-center mb-4 title" id="Prof-skill">Devops Project</div>
       <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div class="card-body">
+        <div class="card-body p-4 justify-content-center" >
           This is my first devops project, which purpose is to be a sandbox for learning new technologies and be a Devops / Cloud Engineer.
           <br><br>
-          Currently I'm working on migrate my stuff from Azure VM to AWS and EKS. Currently i made container repository (ECR) and kubernetes cluster. In the future infrastructure will be build by terraform.
+          Currently I'm working on migrate my stuff from Azure VM to AWS and EKS. Currently i made container repository (ECR) and <br> kubernetes cluster.
+            In the future infrastructure will be build by terraform.
           Also I'm planning to do database.
           <br><br>
           All the code used is avaiable on my github page.
@@ -50,7 +51,7 @@
                    id="list-settings-list" data-bs-toggle="list"
                    href="#list-settings" role="tab"
                    aria-controls="list-settings">
-                    In progress
+                    Containers
                 </a>
               <a class="list-group-item list-group-item-action"
                    id="list-AWS-list" data-bs-toggle="list"
@@ -94,7 +95,11 @@
                 <div class="tab-pane fade" id="list-settings"
                     role="tabpanel"
                     aria-labelledby="list-settings-list">
-                    Settings content
+                    <b>Docker:</b><br><br>
+                    -Dockerfiles for Jenkins, Flaskapp<br><br>
+                    -dockercompose for Nginx and Flaskapp<br><br>
+                    -Docker networks to connect containers<br><br>
+                    -how to build and push container images to ECR<br><br>
                 </div>
               <div class="tab-pane fade" id="list-AWS"
                     role="tabpanel"
@@ -115,8 +120,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
   <script id="code">
     function init() {
-
-      // Abstract colors
       var Colors = {
         "red": "#be4b15",
         "green": "#52ce60",
