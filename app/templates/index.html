@@ -1,110 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <!-- Just text -->
-  <div id="carouselExampleControls" class="carousel slide text-center carousel-dark"
-       data-ride="carousel">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-8">
-            <h2 class="mb-3">Maciej Pająk</h2>
-            <h5 class="mb-3">Devops Intern</h5>
-          </div>
-        </div>
-  </div>
-
-
- <!-- About -->
-  <div class="section" id="about">
-    <div class="container">
-      <div class="card aos-init aos-animate"
-           data-aos="fade-up" data-aos-offset="10">
+  <header class="text-center text-white bg-primary masthead">
+    <div class="container" data-aos="fade-down" data-aos-duration="500"><img class="img-fluid d-block mx-auto mb-5"
+                                                                             src="assets/img/profile.png">
+        <h1>Maciej Pajak</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Devops / Cloud Intern</h2></div>
+</header>
+<section id="portfolio" class="portfolio">
+    <div class="container" data-aos="fade-down" data-aos-duration="500"><h2
+            class="text-uppercase text-center text-secondary"><br><span
+            style="color: rgb(33, 37, 41);">Technology Stack</span><br><br></h2>
+        <hr class="star-dark mb-5">
+        <ul class="list-group">
+            <li class="list-group-item"><span><br><strong>Programming Languages:</strong>&nbsp;Python, C++, Java, Bash (basics)<br><br></span>
+            </li>
+            <li class="list-group-item"><span><br><strong>Public Cloud:</strong>&nbsp;GCP(made course) , Azure (Learning now, basics)<br><br></span>
+            </li>
+            <li class="list-group-item">
+                <span><br><strong>Containers:</strong>&nbsp;Docker, Kubernetes (beginner level)<br><br></span></li>
+            <li class="list-group-item"><span><br><strong>Infrastructure as a Code:&nbsp; </strong>Terraform ( beginner level)<br><br></span>
+            </li>
+            <li class="list-group-item"><span><br><strong>Version Control: </strong>Github</span></li>
+        </ul>
+    </div>
+</section>
+<section class="text-white bg-primary mb-0" id="about">
+    <div class="container" data-aos="fade-down" data-aos-duration="500"><h2
+            class="text-uppercase text-center text-white">About</h2>
+        <hr class="star-light mb-5">
         <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <div class="card-body">
-              <div class="h4 mt-0 title">About</div>
-
-            <p>Second-year student of applied computer science. I have been learning devops related technology for several months now.
-              I am looking for an internship to gain experience in the field of devops. I am a fast learner and I am not afraid of new challenges.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-12">
-            <div class="card-body">
-              <div class="h4 mt-0 title">Basic Information</div>
-              <div class="row">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">
-                    Age:
-                  </strong></div>
-                <div class="col-sm-8">21</div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">
-                    Email:
-                  </strong></div>
-                <div class="col-sm-8">maciej8pajak8@gmail.com</div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">
-                    Phone:
-                  </strong></div>
-                <div class="col-sm-8"></div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-sm-4">
-                  <strong class="text-uppercase">
-                    Language:
-                  </strong></div>
-                <div class="col-sm-8">English (B2) <br>  Polish (Native)</div>
-              </div>
-            </div>
-          </div>
+            <div class="col-lg-4 ms-auto"><p class="lead">Second-year student of applied computer science. I have been
+                learning devops related technology for several months now. I am looking for an internship to gain
+                experience in the field of devops. I am a fast learner and I am not afraid of new challenges.</p></div>
+            <div class="col-lg-4 me-auto"><p class="lead">Basic Information<br><br><strong>AGE:&nbsp; </strong>&nbsp;
+                &nbsp; &nbsp; &nbsp; 21<br>EMAIL:&nbsp; &nbsp; &nbsp;<strong>maciej8pajak8@gmail.com</strong><br>LANGUAGE:<br>English
+                (B2)<br>Polish (Native)</p></div>
         </div>
-      </div>
+        <div class="text-center mt-4"></div>
     </div>
-  </div>
-
-  <div class="section" id="skill">
-    <div class="container my-2">
-      <div class="h4 text-center mb-4 title" id="educational-info">
-        Education
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div class="card-body">
-          <div class="h5">Bachelor's Degree in Applied Computer Sience</div>
-          <div class="h6">2021 - 2024   Jagiellonian University</div>
-          <p>Faculty of physics, Astronomy and Applied computer sience</p>
-
-          <p>
-            <b>Projects:</b><br>
-          <ul>
-            <li>Sfi Academic It festival</li>
-          </ul>
-          </p>
-
-        </div>
-      </div>
+</section>
+<section id="contact">
+    <div class="container" data-aos="fade-down" data-aos-duration="500"><h2
+            class="text-uppercase text-center text-secondary mb-0">Education</h2>
+        <hr class="star-dark mb-5">
     </div>
-  </div>
-
-  <div class="section" id="skill">
-    <div class="container my-2">
-      <div class="h4 text-center mb-4 title" id="Prof-skill">Technology Stack</div>
-      <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div class="card-body">
-          <b>Programming Languages:</b> Python, C++, Java, Bash (basics)<br><br>
-          <b>Public Cloud:</b> GCP(made course) , Azure (Learning now, basics)<br><br>
-          <b>Containers:</b> Docker, Kubernetes (beginner level)<br><br>
-          <b>Infrastructure as a Code:</b> Terraform (beginner level)<br><br>
-          <b>Version control :</b> Github<br><br>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-
-  </div>
+</section>
 {% endblock %}
