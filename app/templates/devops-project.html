@@ -2,28 +2,24 @@
 
 {% block content %}
 
-  <div class="section" id="skill">
-    <div class="container my-2">
-      <div class="h4 text-center mb-4 title" id="Prof-skill">Devops Project</div>
-      <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div class="card-body p-4 justify-content-center" >
-          This is my first devops project, which purpose is to be a sandbox for learning new technologies and be a Devops / Cloud Engineer.
-          <br><br>
-          Currently I'm working on migrate my stuff from Azure VM to AWS and EKS. Currently i made container repository (ECR) and <br> kubernetes cluster.
-            In the future infrastructure will be build by terraform.
-          Also I'm planning to do database.
-          <br><br>
-          All the code used is avaiable on my github page.
-          <br><br>
-          <a class="btn btn-primary" style="background-color: #333333;" href="https://github.com/xRizur/FlaskProject" target="_blank" role="button">
+  <header class="text-center text-white bg-primary masthead">
+    <div class="container" data-aos="fade-down" data-aos-duration="500">
+        <h1>Devops Project</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">This is my first devops project, which purpose is to be a sandbox for
+            learning new technologies and be a Devops / Cloud Engineer.<br><br><br><br>Currently I'm working on migrate
+            my stuff from Azure VM to AWS and EKS. Currently i made container repository (ECR) and kubernetes
+            cluster<br><br><br><br>All the code used is avaiable on my github page.</h2></div>
+        <a class="btn btn-primary" style="background-color: #333333;" href="https://github.com/xRizur/FlaskProject" target="_blank" role="button">
   <i class="fab fa-github me-2"></i>Github Project</a>
-        </div>
-      </div>
+      </header>
 
-    </div>
-  </div>
- <div class="h4 text-center mb-4 title" id="Prof-skil"> List of Technology learned on this project</div>
-<div class="row">
+<section id="technologies" class="technologies">
+    <div class="container" data-aos="fade-down" data-aos-duration="500"><h2
+            class="text-uppercase text-center text-secondary"><br><br><span style="color: rgb(33, 37, 41);">List of Technology learned on this project</span><br><br>
+    </h2>
+        <hr class="star-dark mb-5">
+<div class="row ">
         <div class="col-4">
             <div class="list-group" id="list-tab"
                 role="tablist">
@@ -114,300 +110,15 @@
             </div>
         </div>
     </div>
-  <div class="h4 text-center mb-4 title" id="Prof-ski"> CI/CD flowchart</div>
-  <script src="https://unpkg.com/gojs@2.3.7/release/go.js"></script>
-  <div id="allSampleContent" class="p-4 w-full">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
-  <script id="code">
-    function init() {
-      var Colors = {
-        "red": "#be4b15",
-        "green": "#52ce60",
-        "blue": "#6ea5f8",
-        "lightred": "#fd8852",
-        "lightblue": "#afd4fe",
-        "lightgreen": "#b9e986",
-        "pink": "#faadc1",
-        "purple": "#d689ff",
-        "orange": "#f08c00"
-      }
-
-      var ColorNames = [];
-      for (var n in Colors) ColorNames.push(n);
-
-      // a conversion function for translating general color names to specific colors
-      function colorFunc(colorname) {
-        var c = Colors[colorname]
-        if (c) return c;
-        return "gray";
-      }
-
-
-      // Icons derived from SVG paths designed by freepik: http://www.freepik.com/
-      var Icons = {};
-      Icons.natgas =
-        "F M244.414,133.231 L180.857,133.231 178.509,156.191 250.527,192.94z\
-        M179.027,276.244 262.328,308.179 253.451,221.477z\
-        M267.717,360.866 264.845,332.807 220.179,360.866z\
-        M167.184,266.775 247.705,207.524 176.95,171.421z\
-        M157.551,360.866 192.975,360.866 256.447,320.996 165.218,286.021z\
-        M141.262,374.366 141.262,397.935 161.396,397.935 161.396,425.268 179.197,425.268 179.197,397.935\
-        246.07,397.935 246.07,425.268 263.872,425.268 263.872,397.935 284.006,397.935 284.006,374.366z";
-
-      Icons.oil =
-        "F M190.761,109.999c-3.576-9.132-8.076-22.535,7.609-37.755c0.646,13.375,14.067,13.99,11.351,36.794\
-        c6.231-2.137,6.231-2.137,9.188-3.781c17.285-9.612,20.39-25.205,7.64-42.896c-7.316-10.153-11.945-20.58-10.927-33.23\
-        c-4.207,4.269-5.394,9.444-6.744,17.129c-5.116-3.688,3.067-41.28-22.595-46.26c5.362,13.836,7.564,25.758-2.607,40.076\
-        c-0.667-5.422-3.255-12.263-8.834-17.183c-0.945,16.386,0.97,23.368-9.507,44.682c-2.945,8.902-5.02,17.635,0.533,26.418\
-        C171.354,102.673,180.555,108.205,190.761,109.999z\
-        M330.738,371.614h-15.835v-61.829l-74.409-78.541v-21.516c0-6.073-4.477-11.087-10.309-11.957v-82.156h-63.632v82.156\
-        c-5.831,0.869-10.308,5.883-10.308,11.957v21.516l-74.409,78.541v61.829H66l-25.124,25.123h314.984L330.738,371.614z\
-        M166.554,371.614h-61.717v-29.782h61.717V371.614z M166.554,319.956h-61.717v-1.007l51.471-54.329\
-        c0.555,5.513,4.813,9.919,10.246,10.729V319.956L166.554,319.956z M291.903,371.614h-61.718v-29.782h61.718V371.614z\
-        M291.903,319.956h-61.718V275.35c5.435-0.811,9.691-5.217,10.246-10.729l51.472,54.329V319.956z"
-
-      Icons.pyrolysis =
-        "F M226.46,198.625v-75.5h-87.936v-19.391h-14.304V92.319h-5.079l-3.724-82.777H91.766l-3.724,82.777h-6.18v11.415H68.535\
-        V92.319h-5.079L59.731,9.542H36.08l-3.724,82.777h-6.18v11.415H11.872v94.891H0v35.167h243.333v-35.167H226.46z M61.355,191.792h-28\
-        v-69.333h28V191.792z M117.041,191.792h-28v-69.333h28V191.792z M168.46,198.625h-29.936v-17.5h29.936V198.625z M206.46,198.625h-18\
-        v-37.5h-49.936v-18h67.936V198.625z";
-
-      Icons.fractionation =
-        "F M224.609,218.045l-5.24-173.376h9.172V18.297h-9.969L218.019,0h-32.956l-0.553,18.297h-9.969v26.372h9.171l-2.475,81.878\
-        h-39.196l-1.833-52.987h8.998V47.188h-9.91l-0.633-18.297h-32.913l-0.633,18.297h-9.911V73.56h8.999l-1.833,52.987H62.081\
-        l-0.974-24.097h8.767V76.079h-9.833l-0.74-18.298H26.446l-0.739,18.298h-9.832v26.371h8.766L19.97,218.045H3.041v26.371h238.333\
-        v-26.371z  M144.536,198.667h34.522l-0.586,19.378h-33.267L144.536,198.667z M143.624,172.296l-0.67-19.378h37.487\
-        l-0.586,19.378H143.624z M100.792,172.296H63.93l-0.783-19.378h38.315L100.792,172.296z M99.88,198.667l-0.67,19.378h-33.43\
-        l-0.783-19.378H99.88z";
-
-      Icons.gasprocessing =
-        "F M242.179,212.635V58.634h-80.936v40.877h-13.465l-1.351-33.828h5.284V45.247h-6.1l-0.415-10.382h6.515V14.431h-46.927\
-      v20.435h6.515l-0.415,10.382h-6.1v20.436h5.284l-2.8,70.125H96.186V95.007H10.642v117.628H0v25.755h252.82v-25.755H242.179z\
-      M73.501,135.808H51.714v76.827H33.327v-94.942h40.174V135.808z M137.797,213.516h-19.099v-88h19.099V213.516z M219.494,212.635\
-      h-18.316v-51.411h18.316V212.635z M219.494,138.539h-18.316V99.511h-17.25V81.319h35.566V138.539z";
-
-      Icons.polymerization =
-        "F M399.748,237.029 L363.965,174.401 345.094,174.401 343.113,155.463 326.566,155.463 322.797,29.385 290.486,29.385\
-        286.715,155.463 270.17,155.463 261.634,237.029 242.029,237.029 242.029,190.314 192.029,190.314 192.029,230.587 109.84,187.329\
-        109.84,230.486 27.84,187.329 27.84,237.029 0,237.029 0,394.674 424.059,394.674 424.059,237.029z";
-
-      Icons.finishedgas =
-        "F M422.504,346.229v-68.306h-16.678v-24.856c0-21.863-16.199-39.935-37.254-42.882v-0.798\
-        c0-26.702-21.723-48.426-48.426-48.426h-1.609c-26.699,0-48.426,21.724-48.426,48.426v87.633h-23.641v-93.169\
-        c0-6.083-3.248-11.394-8.096-14.333c5.662-1.667,9.799-6.896,9.799-13.098c0-7.544-6.117-13.661-13.662-13.661h-10.981v-12.727h-17\
-        v12.727h-10.984c-7.545,0-13.66,6.116-13.66,13.661c0,6.202,4.137,11.431,9.799,13.098c-4.848,2.94-8.098,8.25-8.098,14.333v93.169\
-        h-23v-85.596c0-4.458-3.613-8.071-8.07-8.071h-16.412v-87.591c0-16.03-13.041-29.071-29.07-29.071v-1.267\
-        c0-23.608-19.139-42.748-42.748-42.748S21.54,61.817,21.54,85.425v260.805H0v55.139h444.045v-55.139H422.504z M286.256,209.387\
-        c0-17.801,14.48-32.284,32.281-32.284h1.609c17.803,0,32.285,14.483,32.285,32.284v1.559\
-        c-19.059,4.545-33.232,21.673-33.232,42.124v24.855h-16.676v19.098h-16.27v-87.635H286.256z M302.525,313.162v33.067h-16.27\
-        v-33.067H302.525z M270.113,313.162v33.067h-23.641v-33.067H270.113z M144.447,219.496v85.596c0,4.458,3.613,8.071,8.07,8.071\
-        h31.07v33.068h-47.482V219.496H144.447z M107.035,102.834c7.129,0,12.93,5.8,12.93,12.929v87.591h-12.93V102.834z M107.035,219.496\
-        h12.93v126.733h-12.93V219.496z";
-
-      var IconNames = [];
-      for (var n in Icons) IconNames.push(n);
-
-      // A data binding conversion function. Given a name, return the Geometry.
-      // If there is only a string, replace it with a Geometry object, which can be shared by multiple Shapes.
-      function geoFunc(geoname) {
-        var geo = Icons[geoname];
-        if (typeof geo === "string") {
-          geo = Icons[geoname] = go.Geometry.parse(geo, true);
-        }
-        return geo;
-      }
-
-
-
-      // Since 2.2 you can also author concise templates with method chaining instead of GraphObject.make
-      // For details, see https://gojs.net/latest/intro/buildingObjects.html
-      const $ = go.GraphObject.make;  // for conciseness in defining templates
-      myDiagram = $(go.Diagram, "myDiagramDiv",  // create a Diagram for the DIV HTML element
-        {
-          initialAutoScale: go.Diagram.Uniform,  // scale to show all of the contents
-          "ChangedSelection": onSelectionChanged, // view additional information
-          maxSelectionCount: 1,  // don't allow users to select more than one thing at a time
-          isReadOnly: true
-        });
-
-      myDiagram.nodeTemplate =
-        $(go.Node, "Spot",
-          {
-            locationObjectName: "PORT",
-            locationSpot: go.Spot.Top,  // location point is the middle top of the PORT
-            linkConnected: updatePortHeight,
-            linkDisconnected: updatePortHeight,
-            toolTip:
-              $("ToolTip",
-                $(go.TextBlock, { margin: 4, width: 140 },
-                  new go.Binding("text", "", data => data.text + ":\n\n" + data.description))
-              )
-          },
-          new go.Binding("location", "pos", go.Point.parse).makeTwoWay(go.Point.stringify),
-          // The main element of the Spot panel is a vertical panel housing an optional icon,
-          // plus a rectangle that acts as the port
-          $(go.Panel, "Vertical",
-            $(go.Shape,
-              {
-                width: 40, height: 0,
-                stroke: null, strokeWidth: 0, fill: "gray"
-              },
-              new go.Binding("height", "icon", () => 40),
-              new go.Binding("fill", "color", colorFunc),
-              new go.Binding("geometry", "icon", geoFunc)),
-            $(go.Shape,
-              {
-                name: "PORT",
-                width: 40, height: 24, margin: new go.Margin(-1, 0, 0, 0),
-                stroke: null, strokeWidth: 0, fill: "gray",
-                portId: "", fromLinkable: true, toLinkable: true
-              },
-              new go.Binding("fill", "color", colorFunc)),
-            $(go.TextBlock,
-              {
-                font: "Bold 14px Lato, sans-serif",
-                textAlign: "center",
-                margin: 3,
-                maxSize: new go.Size(100, NaN),
-                alignment: go.Spot.Top,
-                alignmentFocus: go.Spot.Bottom,
-                editable: true
-              },
-              new go.Binding("text").makeTwoWay())
-          )
-        );
-
-      function updatePortHeight(node, link, port) {
-        var sideinputs = 0;
-        var sideoutputs = 0;
-        node.findLinksConnected().each(l => {
-          if (l.toNode === node && l.toSpot === go.Spot.LeftSide) sideinputs++;
-          if (l.fromNode === node && l.fromSpot === go.Spot.RightSide) sideoutputs++;
-        });
-        var tot = Math.max(sideinputs, sideoutputs);
-        tot = Math.max(1, Math.min(tot, 2));
-        port.height = tot * (10+2) + 2;  // where 10 is the link path's strokeWidth
-      }
-
-      myDiagram.linkTemplate =
-        $(go.Link,
-          {
-            layerName: "Background",
-            routing: go.Link.Orthogonal,
-            corner: 15,
-            reshapable: true,
-            resegmentable: true,
-            fromSpot: go.Spot.RightSide,
-            toSpot: go.Spot.LeftSide
-          },
-          // make sure links come in from the proper direction and go out appropriately
-          new go.Binding("fromSpot", "fromSpot", go.Spot.parse),
-          new go.Binding("toSpot", "toSpot", go.Spot.parse),
-          new go.Binding("points").makeTwoWay(),
-          // mark each Shape to get the link geometry with isPanelMain: true
-          $(go.Shape, { isPanelMain: true, stroke: "gray", strokeWidth: 10 },
-            // get the default stroke color from the fromNode
-            new go.Binding("stroke", "fromNode", n => go.Brush.lighten((n && Colors[n.data.color]) || "gray")).ofObject(),
-            // but use the link's data.color if it is set
-            new go.Binding("stroke", "color", colorFunc)),
-          $(go.Shape, { isPanelMain: true, stroke: "white", strokeWidth: 3, name: "PIPE", strokeDashArray: [20, 40] })
-        );
-
-      var SpotNames = ["Top", "Left", "Right", "Bottom", "TopSide", "LeftSide", "RightSide", "BottomSide"];
-
-      myDiagram.model = go.Model.fromJson(document.getElementById("mySavedModel").textContent);
-
-      loop();  // animate some flow through the pipes
-    }
-
-    var opacity = 1;
-    var down = true;
-    function loop() {
-      var diagram = myDiagram;
-      setTimeout(() => {
-        var oldskips = diagram.skipsUndoManager;
-        diagram.skipsUndoManager = true;
-        diagram.links.each(link => {
-          var shape = link.findObject("PIPE");
-          var off = shape.strokeDashOffset - 3;
-          // animate (move) the stroke dash
-          shape.strokeDashOffset = (off <= 0) ? 60 : off;
-          // animte (strobe) the opacity:
-          if (down) opacity = opacity - 0.01;
-          else opacity = opacity + 0.003;
-          if (opacity <= 0) { down = !down; opacity = 0; }
-          if (opacity > 1) { down = !down; opacity = 1; }
-          shape.opacity = opacity;
-        });
-        diagram.skipsUndoManager = oldskips;
-        loop();
-      }, 60);
-    }
-
-    function onSelectionChanged() {
-      var node = myDiagram.selection.first();
-      if (!(node instanceof go.Node)) return;
-      var data = node.data;
-      var image = document.getElementById("Image");
-      var title = document.getElementById("Title");
-      var description = document.getElementById("Description");
-
-      if (data.imgsrc) {
-        image.src = data.imgsrc;
-        image.alt = data.caption;
-      } else {
-        image.src = "";
-        image.alt = "";
-      }
-      title.textContent = data.text;
-      description.textContent = data.description;
-    }
-    window.addEventListener('DOMContentLoaded', init);
-  </script>
-
-<div id="sample">
-  <div style="width:100%">
-      <div id="myDiagramDiv" style="border: 1px solid black; width: 70%; height: 550px; display: inline-block; vertical-align: top; position: relative; -webkit-tap-highlight-color: rgba(255, 255, 255, 0); cursor: auto;"><canvas tabindex="0" width="984" height="730" style="position: absolute; top: 0px; left: 0px; z-index: 2; user-select: none; touch-action: none; letter-spacing: normal; word-spacing: normal; width: 738px; height: 548px; cursor: auto;">This text is displayed if your browser does not support the Canvas HTML element.</canvas><div style="position: absolute; overflow: auto; width: 738px; height: 548px; z-index: 1;"><div style="position: absolute; width: 1px; height: 1px;"></div></div></div>
-      <div id="infobox" style="display: inline-block; vertical-align: top; width: 256px; background: #757575; color: #FFF; padding: 20px;">
-        <img id="Image" width="216" alt="" src="">
-        <h3 id="Title"></h3>
-        <p id="Description">Select a node to see more information.</p>
-      </div>
-  </div>
-  <div>
-    <textarea id="mySavedModel" style="display: none">{ "class": "GraphLinksModel",
-  "nodeDataArray": [
-{"key":1,"pos":"490 -106","icon":"natgas","color":"blue","text":"mpajak.live","description":"","caption":"Gas Drilling Well","imgsrc":""},
-{"key":2,"pos":"-350 100","icon":"oil","color":"blue","text":"Git commit","description":"Developer makes changes and sends a commit to github repository","caption":"Offshore oil well","imgsrc":"https://www.malwarebytes.com/blog/news/2023/03/easset_upload_file13810_262604_e.png"},
-{"key":3,"pos":"-190 100","icon":"gasprocessing","color":"blue","text":"Jenkins catch webhook","description":"Jenkins recognizes the uploaded commit and does the work of building and testing the application   Jenkinsfile at github","caption":"","imgsrc":"data:image/png;base64,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"},
-{"key":4,"pos":"90 -141","icon":"fractionation","color":"red","text":"Jenkins push container image","description":"After tests jenkins push app container image to repository on AWS","caption":"","imgsrc":"data:image/png;base64,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"},
-{"key":5,"pos":"160 104","icon":"pyrolysis","color":"blue","text":"Deploy on Azure VM","description":"Currently all containers are runned on virtual machine hosted on azure","caption":"Pyrolysis plant","imgsrc":"data:image/png;base64,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"},
-{"key":6,"pos":"340 -6","icon":"polymerization","color":"green","text":"Nginx","description":"Nginx web server configured as a reverse proxy that mediates between the user and gunicorn server, server configuration by :","caption":"Plastics engineering-Polymer products","imgsrc":"https://blog.desdelinux.net/wp-content/uploads/2022/05/Nginx.jpg"},
-{"key":7,"pos":"200 -159","icon":"polymerization","color":"red","text":"AWS ECR store container","description":"All the containers will be stored in Amazon ECR repository","caption":"Lego Color Bricks","imgsrc":"https://roi4cio.com/fileadmin/user_upload/Amazon_Elastic_Container_Registry__ECR_.png"},
-{"key":8,"pos":"350 116","icon":"polymerization","color":"lightgreen","text":"gunicorn server","description":"Gunicorn can be used with any Python web framework that supports the WSGI standard, such as Flask. It is a popular choice for deploying Python web applications in production environments due to its ease of use, performance, and reliability.","caption":"","imgsrc":"https://linuxconfig.org/wp-content/uploads/2017/02/gunicorn_logo.png"},
-{"key":9,"pos":"340 242","color":"red","text":"Contenerized flask app","description":"Containerized flask application, that is, this site, which was also written in bootstrap and go.js along with standards - I created routing for subpages and created templates for navbar, base and footer","caption":"","imgsrc":"https://vercel.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F6Dqa9T8XOOC95yJb0z9jew%2Fce4932b8d23046f260510e24c1ec39e1%2Fthumbnail.png&w=3840&q=75"},
-{"key":10,"pos":"340 -159","icon":"finishedgas","color":"red","text":"Kubernetes Cluster","description":"All the containers in the futare will be orkiestrated in kubernetes cluster (Nginx reverse proxy, flask app)","caption":"Liquid Petroleum Gas Truck","imgsrc":"data:image/png;base64,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"},
-{"key":11,"pos":"0 94","icon":"finishedgas","color":"blue","text":"Building docker images / testing","description":"Jenkins building and testing docker images, and push it to amazon VM","caption":"","imgsrc":"https://d1.awsstatic.com/acs/characters/Logos/Docker-Logo_Horizontel_279x131.b8a5c41e56b77706656d61080f6a0217a3ba356d.png"}
-],
-  "linkDataArray": [
-{"from":2,"to":3,"points":[-330,107,-320,107,-270,107,-270,107,-220,107,-210,107]},
-{"from":5,"to":6,"fromSpot":"Right","points":[180,111,190,111,250,111,250,7,310,7,320,7],"color":"blue"},
-{"from":5,"to":8,"fromSpot":"Right","points":[180,111,190,111,255,111,255,129,320,129,330,129],"color":"blue"},
-{"from":5,"to":9,"fromSpot":"Right","points":[180,111,190,111,250,111,250,249,310,249,320,249],"color":"blue"},
-{"from":7,"to":4,"points":[180,-152,170,-152,90,-152,90,-151.5,90,-151,90,-141],"toSpot":"Top","fromSpot":"Left","color":"red"},
-{"from":3,"to":11,"points":[-170,107,-160,107,-95,107,-95,107,-30,107,-20,107]},
-{"from":11,"to":5,"points":[20,111.33333333333333,38,111.33333333333333,84,111.33333333333333,84,111,130,111,140,111]},
-{"from":7,"to":10,"points":[220,-152,230,-152,270,-152,270,-152,310,-152,320,-152],"color":"red"},
-{"from":10,"to":1,"points":[360,-152,370,-152,415,-152,415,-97.33333333333333,460,-97.33333333333333,470,-97.33333333333333],"color":"red"},
-{"from":6,"to":1,"points":[360,7,370,7,415,7,415,-88.66666666666667,460,-88.66666666666667,470,-88.66666666666667],"color":"green"},
-{"from":8,"to":6,"points":[370,129,380,129,380,7,375,7,370,7,360,7],"toSpot":"Right"},
-{"from":9,"to":8,"points":[360,249,370,249,380,249,380,189,380,129,370,129],"toSpot":"Right"},
-{"from":11,"to":4,"points":[20,102.66666666666667,30,102.66666666666667,45,102.66666666666667,45,-134,60,-134,70,-134],"color":"red"}
-]}
-    </textarea>
-  </div>
-</div>
-  </div>
+    </div>
+    <div class="container" data-aos="fade-down" data-aos-duration="500"><h2
+            class="text-uppercase text-center text-secondary mb-0">CI / CD Flowchart</h2>
+        <hr class="star-dark mb-5">
+  {% include 'flowchart-devops-project.html' %}
+    </div>
+</section>
+<script src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/assets/js/script.min.js"></script>
   </body>
   </html>
 {% endblock %}
