@@ -21,7 +21,6 @@ services:
     command: gunicorn --bind 0.0.0.0:8000 --workers 4 "app.create_app:create_app()"
     volumes:
       - ./:/var/www
-      - ./default.conf:/etc/nginx/conf.d/default.conf
     networks:
       my-network:
         aliases:
