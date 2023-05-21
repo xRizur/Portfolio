@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM python:3.7-slim
 
 ENV CONTAINER_HOME=/var/www
 
