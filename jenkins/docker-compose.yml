@@ -10,7 +10,7 @@ services:
       - 'jenkins_data:/bitnami/jenkins'
       - 'jenkins_home:/var/jenkins_home'
       - '/var/run/docker.sock:/var/run/docker.sock'
-
+      - '/home/xrizur/flask:/flask'
 volumes:
   jenkins_data:
     driver: local
