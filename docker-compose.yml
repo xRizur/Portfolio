@@ -19,7 +19,7 @@ services:
   certbot:
     image: certbot/certbot:latest
     volumes:
-      - home/xrizur/certbot/www/:/var/www/certbot/:rw
+      - /home/xrizur/certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
   flask:
     build:
