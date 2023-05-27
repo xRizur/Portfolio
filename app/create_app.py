@@ -10,7 +10,7 @@ def create_app():
     # Set MySQL data
     app.config['MYSQL_HOST'] = 'mysql'
     app.config['MYSQL_USER'] = 'root'
-    app.config['MYSQL_PASSWORD'] = 'my-secret-pw'
+    app.config['MYSQL_PASSWORD'] = 'pwd'
     app.config['MYSQL_DB'] = 'user-system'
 
     mysql = MySQL(app)
