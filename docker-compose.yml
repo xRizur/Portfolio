@@ -8,6 +8,7 @@ services:
       - ./:/var/www/html
       - ./default.conf:/etc/nginx/conf.d/default.conf
       - /home/xrizur/certbot/www:/var/www/certbot/:ro
+      - /home/xrizur/certbot/conf/:/etc/nginx/ssl/:ro
     ports:
       - 80:80
       - 443:443
@@ -19,7 +20,7 @@ services:
     image: certbot/certbot:latest
     volumes:
       - /home/xrizur/certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/letsencrypt/:rw
+      - /home/xrizur/certbot/conf/:/etc/letsencrypt/:rw
   flask:
     build:
       context: ./
@@ -40,8 +41,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: my-secret-pw
       MYSQL_DATABASE: user-system
-      MYSQL_USER: root
-      MYSQL_PASSWORD: my-secret-pw
     volumes:
       - mysql-data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
