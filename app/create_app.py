@@ -6,7 +6,6 @@ import re
 
 def create_app():
     app = Flask(__name__)
-    app.secret_key = 'xyzsdfg'
 
     # Set MySQL data
     app.config['MYSQL_HOST'] = 'mysql'
