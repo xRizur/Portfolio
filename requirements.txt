@@ -1,2 +1,5 @@
-flask
+flask~=2.2.3
 gunicorn
+mysqlclient~=2.1.1
+boto3~=1.26.133
+kubernetes~=26.1.0

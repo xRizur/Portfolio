@@ -8,7 +8,6 @@ services:
       - ./:/var/www/html
       - ./default.conf:/etc/nginx/conf.d/default.conf
       - /home/xrizur/certbot/www:/var/www/certbot/:ro
-      - /home/xrizur/certbot/conf/:/etc/nginx/ssl/:ro
     ports:
       - 80:80
       - 443:443
@@ -33,6 +32,24 @@ services:
       - ./:/var/www
     networks:
       - my-network
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: user-system
+      MYSQL_USER: root
+      MYSQL_PASSWORD: my-secret-pw
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - my-network
+
+volumes:
+  mysql-data:
 
 networks:
   my-network:
