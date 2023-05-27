@@ -33,6 +33,24 @@ services:
       - ./:/var/www
     networks:
       - my-network
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: user-system
+      MYSQL_USER: root
+      MYSQL_PASSWORD: my-secret-pw
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - my-network
+
+volumes:
+  mysql-data:
 
 networks:
   my-network:

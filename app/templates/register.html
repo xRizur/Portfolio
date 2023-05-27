@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="py-5"></header>
+<div class="container">
+    <h2>Admin Registration </h2>
+    <form action="{{ url_for('register') }}" method="post">
+        {% if message is defined and message %}
+            <div class="alert alert-warning">  <strong>  {{ message }} ???? </strong></div>
+        {% endif %}
+        <br>
+        <div class="form-group">
+             Name: <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" name="name">
+        </div>
+        <div class="form-group">
+             Email: <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+            Password: <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login here</a></p>
+    </form>
+</div>
+
+<section class="py-4 py-xl-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto"><h2>Register</h2>
+                    </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-xl-4">
+                    <div class="card mb-5">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                     viewBox="0 0 16 16" class="bi bi-person">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                                </svg>
+                            </div>
+                            <form class="text-center" method="post" style="margin-left: 1px;" action="/register">
+                                <div class="mb-3"><input class="form-control" type="email" name="email"
+                                                         placeholder="Email">
+                                    <div class="mb-3"><input class="form-control" type="text" name="Username"
+                                                             placeholder="Username"></div>
+                                </div>
+                                <div class="mb-3"><input class="form-control" type="password" name="password"
+                                                         placeholder="Password"></div>
+                                <div class="mb-3">
+                                    <button class="btn btn-primary d-block w-100" type="submit">Login</button>
+                                </div>
+                                <p class="text-muted">Accept</p></form>
+                        </div>
+                        <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
