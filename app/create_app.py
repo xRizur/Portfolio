@@ -36,7 +36,7 @@ def create_app():
                                 message=message)
             else:
                 message = 'Please enter correct email / password !'
-        return render_template('login.html', message=message)
+        return render_template('logged.html', message=message)
     @app.route('/logpage')
     def logpage():
         return render_template('login.html')
@@ -49,7 +49,9 @@ def create_app():
         session.pop('email', None)
         return redirect(url_for('login'))
 
-
+    @app.route('/logged')
+    def logged():
+        return render_template('logged.html')
 # Make a register session for registration session
 # and also connect to Mysql to code for access login
 # and for completing our login
