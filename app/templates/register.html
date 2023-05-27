@@ -2,33 +2,15 @@
 
 {% block content %}
 <header class="py-5"></header>
-<div class="container">
-    <h2>Admin Registration </h2>
-    <form action="/register" method="post">
-        {% if message is defined and message %}
-            <div class="alert alert-warning">  <strong>  {{ message }} ???? </strong></div>
-        {% endif %}
-        <br>
-        <div class="form-group">
-             Name: <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" name="name">
-        </div>
-        <div class="form-group">
-             Email: <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email">
-        </div>
-        <div class="form-group">
-            Password: <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-        <p class="bottom">Already have an account?  <a class="bottom" href="/login"> Login here</a></p>
-    </form>
-</div>
-
 <section class="py-4 py-xl-5">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 col-xl-6 text-center mx-auto"><h2>Register</h2>
                     </div>
             </div>
+            {% if message is defined and message %}
+            <div class="alert alert-warning">  <strong>  {{ message }} ???? </strong></div>
+        {% endif %}
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 col-xl-4">
                     <div class="card mb-5">
@@ -41,18 +23,18 @@
                             </div>
                             <form class="text-center" method="post" style="margin-left: 1px;" action="/register">
                                 <div class="mb-3"><input class="form-control" type="email" name="email"
-                                                         placeholder="Email">
-                                    <div class="mb-3"><input class="form-control" type="text" name="Username"
-                                                             placeholder="Username"></div>
+                                                         placeholder="Email" id="email">
+                                    <div class="mb-3"><input class="form-control" type="text" name="name"
+                                                             placeholder="Username" id="name"></div>
                                 </div>
                                 <div class="mb-3"><input class="form-control" type="password" name="password"
-                                                         placeholder="Password"></div>
+                                                         placeholder="Password" id="password"></div>
                                 <div class="mb-3">
                                     <button class="btn btn-primary d-block w-100" type="submit">Login</button>
                                 </div>
                                 <p class="text-muted">Accept</p></form>
                         </div>
-                        <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login here</a></p>
+                        <p class="bottom text-center">Already have an account?  <a class="bottom" href="/login"> Login here</a></p>
                     </div>
                 </div>
             </div>

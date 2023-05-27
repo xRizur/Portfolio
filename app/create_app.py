@@ -32,7 +32,7 @@ def create_app():
                 session['name'] = user['name']
                 session['email'] = user['email']
                 message = 'Logged in successfully !'
-                return render_template('admin.html',
+                return render_template('logged.html',
                                 message=message)
             else:
                 message = 'Please enter correct email / password !'
@@ -66,8 +66,7 @@ def create_app():
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
 
 
-            cursor.execute('SELECT * FROM user WHERE email = % s',
-                (email,))
+            cursor.execute('SELECT * FROM user WHERE email = % s',(email,))
             account = cursor.fetchone()
             if account:
                 message = 'Account already exists !'
