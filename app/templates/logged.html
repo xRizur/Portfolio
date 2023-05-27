@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-<header class="py-5"></header>
-<div class="container">
-    <div class="row">
-        <h2>Admin Profile</h2>
+<section id="userProfile" class="userProfile">
+    <div class="container" data-aos="fade-down" data-aos-duration="500"><h2
+            class="text-uppercase text-center text-secondary"><br><span
+            style="color: rgb(33, 37, 41);">User Profile</span><br><br></h2>
+        <hr class="star-dark mb-5">
+        <ul class="list-group">
+            <li class="list-group-item"><span><br>Email: <strong></strong>{{session.email}}<br><br></span>
+            </li>
+            <li class="list-group-item"><span><br><strong>Username:</strong>&nbsp;{{session.name}}<br><br></span>
+            </li>
+             <li class="list-group-item"><span>If you want change password Click <a href="">here</a><br><br></span>
+            </li>
+        </ul>
+        <a href="/logout"> <button class="btn btn-primary" type="button" style="margin-top: 20px;">logout</button> </a>
     </div>
-    <br>
-    <div class="row">
-        Logged in : <strong>{{session.name}} ???? | <a href="/logout"> Logout</a>
-    </div>
-    <br><br>
-    <div class="row">
-
-        <h2>Welcome to the Admin profile page... ????</h2>
-    </div>
-</div>
+</section>
 {% endblock %}

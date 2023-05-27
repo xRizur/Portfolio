@@ -45,7 +45,7 @@ def create_app():
         session.pop('userId', None)
         session.pop('email', None)
         session.pop('name', None)
-        return redirect('/login')
+        return redirect('/login',message='You have successfully logged out !')
 
     @app.route('/logged')
     def logged():
