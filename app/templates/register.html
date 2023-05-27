@@ -4,7 +4,7 @@
 <header class="py-5"></header>
 <div class="container">
     <h2>Admin Registration </h2>
-    <form action="{{ url_for('register') }}" method="post">
+    <form action="/register" method="post">
         {% if message is defined and message %}
             <div class="alert alert-warning">  <strong>  {{ message }} ???? </strong></div>
         {% endif %}
@@ -19,7 +19,7 @@
             Password: <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd">
         </div>
         <button type="submit" class="btn btn-primary">Register</button>
-        <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login here</a></p>
+        <p class="bottom">Already have an account?  <a class="bottom" href="/login"> Login here</a></p>
     </form>
 </div>
 
