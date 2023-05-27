@@ -6,7 +6,7 @@ import re
 
 def create_app():
     app = Flask(__name__)
-
+    app.secret_key = 'xyzsdfg'
     # Set MySQL data
     app.config['MYSQL_HOST'] = 'mysql'
     app.config['MYSQL_USER'] = 'root'
@@ -28,7 +28,7 @@ def create_app():
             user = cursor.fetchone()
             if user:
                 session['loggedin'] = True
-                session['userid'] = user['userid']
+                session['userId'] = user['userId']
                 session['name'] = user['name']
                 session['email'] = user['email']
                 message = 'Logged in successfully !'
@@ -45,7 +45,7 @@ def create_app():
     @app.route('/logout')
     def logout():
         session.pop('loggedin', None)
-        session.pop('userid', None)
+        session.pop('userId', None)
         session.pop('email', None)
         return redirect(url_for('login'))
 
