@@ -36,7 +36,7 @@ def create_app():
                                 message=message)
             else:
                 message = 'Please enter correct email / password !'
-        return render_template('logged.html', message=message)
+        return render_template('login.html', message=message)
     @app.route('/logpage')
     def logpage():
         return render_template('login.html')
@@ -47,7 +47,7 @@ def create_app():
         session.pop('loggedin', None)
         session.pop('userId', None)
         session.pop('email', None)
-        return redirect(url_for('login'))
+        return redirect(login.html)
 
     @app.route('/logged')
     def logged():
