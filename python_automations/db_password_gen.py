@@ -20,10 +20,10 @@ set_key(env_path, "MYSQL_PASSWORD", new_password)
 # Set environment variable (Note: this only affects the current script, it does not persist after the script ends)
 os.environ['MYSQL_PASSWORD'] = new_password
 
-mysql_command = f"ALTER USER 'root'@'localhost' {old_password} IDENTIFIED BY '{new_password}';"
+mysql_command = f"ALTER USER 'root'@'localhost' IDENTIFIED BY '{new_password}';"
 
 # Execute command inside MySQL Docker container
-docker_command = f"docker exec -i mysql mysql -u root -p {old_password} -e \"{mysql_command}\""
+docker_command = f"docker exec -i mysql mysql -u root -p{old_password} -e \"{mysql_command}\""
 try:
     subprocess.run(docker_command, shell=True, check=True)
 except subprocess.CalledProcessError as e:
