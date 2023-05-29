@@ -41,10 +41,10 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: pwd
-      MYSQL_DATABASE: user-system
+      MYSQL_ROOT_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
     volumes:
-      - ${HOME}/data/mysql-data:/var/lib/mysql
+      - /data/mysql-data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - my-network

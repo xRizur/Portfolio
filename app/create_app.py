@@ -2,18 +2,21 @@ from flask import *
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import re
-
+from dotenv import load_dotenv
+import os
 
 def create_app():
+    load_dotenv('../.env')
     app = Flask(__name__)
     app.secret_key = 'xyzsdfg'
     # Set MySQL data
     app.config['MYSQL_HOST'] = 'mysql'
     app.config['MYSQL_USER'] = 'root'
-    app.config['MYSQL_PASSWORD'] = 'pwd'
+    app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD')
     app.config['MYSQL_DB'] = 'user-system'
 
     mysql = MySQL(app)
+
     @app.route('/login', methods=['GET', 'POST'])
     def login():
         message = ''
@@ -33,19 +36,19 @@ def create_app():
                 session['email'] = user['email']
                 message = 'Logged in successfully !'
                 return render_template('logged.html',
-                                message=message)
+                                       message=message)
             else:
                 message = 'Please enter correct email / password !'
         return render_template('login.html', message=message)
 
-# Make function for logout session
+    # Make function for logout session
     @app.route('/logout')
     def logout():
         session.pop('loggedin', None)
         session.pop('userId', None)
         session.pop('email', None)
         session.pop('name', None)
-        return redirect('/login',message="Successfull logout")
+        return render_template('login.html',message='Logged out successfully !')
 
     @app.route('/logged')
     def logged():
@@ -60,8 +63,7 @@ def create_app():
             email = request.form['email']
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
 
-
-            cursor.execute('SELECT * FROM user WHERE email = % s',(email,))
+            cursor.execute('SELECT * FROM user WHERE email = % s', (email,))
             account = cursor.fetchone()
             if account:
                 message = 'Account already exists !'
@@ -78,14 +80,17 @@ def create_app():
         elif request.method == 'POST':
             message = 'Please fill out the form !'
         return render_template('register.html', message=message)
+
     @app.route('/')
     def index():
         return render_template('index.html')
+
     @app.route('/devops-project')
     def about():
         return render_template('devops-project.html')
 
     return app
+
 
 if __name__ == '__main__':
     app = create_app()
