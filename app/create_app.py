@@ -45,16 +45,11 @@ def create_app():
         session.pop('userId', None)
         session.pop('email', None)
         session.pop('name', None)
-        return redirect('/login')
+        return redirect('/login',message="Successfull logout")
 
     @app.route('/logged')
     def logged():
         return render_template('logged.html')
-# Make a register session for registration session
-# and also connect to Mysql to code for access login
-# and for completing our login
-# session and making some flashing massage for error
-
 
     @app.route('/register', methods=['GET', 'POST'])
     def register():

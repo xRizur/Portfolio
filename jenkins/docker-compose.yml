@@ -1,16 +1,15 @@
 version: '3'
 services:
   jenkins:
-    image: 'santhoshkdhana/jenkins-python3.9'
+    image: 'jenkins'
     restart: unless-stopped
     ports:
       - '8080:8080'
 
     volumes:
-      - 'jenkins_data:/bitnami/jenkins'
-      - 'jenkins_home:/var/jenkins_home'
+      - '${HOME}/data/jenkins_data:/bitnami/jenkins'
+      - '${HOME}/data/jenkins_home:/var/jenkins_home'
       - '/var/run/docker.sock:/var/run/docker.sock'
-      - '/home/xrizur/flask:/flask'
 volumes:
   jenkins_data:
     driver: local

@@ -66,13 +66,9 @@
                     <div class="card-body">
 
           <b>Bootstrap:</b> For components and style<br><br>
-          <b>Flask:</b> For routes and other stuff<br><br>
+          <b>Flask:</b> <br>-For routes and backend<br><br> - flask-login for registratorion <br><br> - flask-mysqldb for integration with mysql
           <b>Jinja2:</b> For making templates to structure below<br><br>
-          <b>Site Structure :</b><br> -base.html<br>
-                          -navbar.html<br>
-                          -footer.html<br>
-                          -index.html<br>
-                          -devops-project.html<br><br><br>
+
         </div>
                 </div>
                 <div class="tab-pane fade" id="list-profile"
@@ -82,12 +78,13 @@
                   - Configured to be in container <br>
                   - Configured GithubWebhook (when commit pushed, jenkins get it) <br>
                   - How to install plugins on Jenkins <br>
-                  - How to write a Jenkinsfile to do a job
+                  - How to write a Jenkinsfile to do a job <br>
+                    - Configured first pipeline
                 </div>
                 <div class="tab-pane fade" id="list-messages"
                     role="tabpanel"
                     aria-labelledby="list-messages-list">
-                    <b>Nginx Web Server:</b> <br><br>-how to setup make own configuration <br><br> -To be reverse proxy <br><br> - Contenerized <br> <br>
+                    <b>Nginx Web Server:</b> <br><br>-how to setup make own configuration <br><br> -To be reverse proxy <br><br> - Contenerized <br> <br> - configure https and ssl certification <br> <br>
                     <b>gunicorn Flask Server:</b> <br><br> -how to setup in container and be connected to Nginx
                 </div>
                 <div class="tab-pane fade" id="list-settings"
@@ -95,7 +92,7 @@
                     aria-labelledby="list-settings-list">
                     <b>Docker:</b><br><br>
                     -Dockerfiles for Jenkins, Flaskapp<br><br>
-                    -dockercompose for Nginx and Flaskapp<br><br>
+                    -dockercompose for Nginx and Flaskapp, MYSQL<br><br>
                     -Docker networks to connect containers<br><br>
                     -how to build and push container images to ECR<br><br>
                 </div>
@@ -117,6 +114,9 @@
     <div class="container" data-aos="fade-down" data-aos-duration="500"><h2
             class="text-uppercase text-center text-secondary mb-0">CI / CD Flowchart</h2>
         <hr class="star-dark mb-5">
+
+
+
   {% include 'flowchart-devops-project.html' %}
     </div>
 </section>
