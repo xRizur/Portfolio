@@ -5,5 +5,3 @@ boto3~=1.26.133
 kubernetes~=26.1.0
 flask_mysqldb
 python-dotenv~=0.20.0
-
-```
