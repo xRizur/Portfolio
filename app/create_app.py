@@ -7,12 +7,13 @@ import os
 
 def create_app():
     load_dotenv('../.env')
+    db_password = os.environ.get('MYSQL_PASSWORD')
     app = Flask(__name__)
     app.secret_key = 'xyzsdfg'
     # Set MySQL data
     app.config['MYSQL_HOST'] = 'mysql'
     app.config['MYSQL_USER'] = 'root'
-    app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD')
+    app.config['MYSQL_PASSWORD'] = db_password
     app.config['MYSQL_DB'] = 'user-system'
 
     mysql = MySQL(app)
@@ -48,11 +49,7 @@ def create_app():
         session.pop('userId', None)
         session.pop('email', None)
         session.pop('name', None)
-        return render_template('login.html',message='Logged out successfully !')
-
-    @app.route('/logged')
-    def logged():
-        return render_template('logged.html')
+        return redirect('/login')
 
     @app.route('/register', methods=['GET', 'POST'])
     def register():
