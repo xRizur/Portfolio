@@ -1,5 +1,4 @@
 /app/.aws/
-.env
 /terraform
 /app/config
 /app/.kube
