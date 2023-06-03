@@ -85,6 +85,9 @@ def create_app():
     @app.route('/devops-project')
     def about():
         return render_template('devops-project.html')
+    @app.route('/grafana')
+    def grafana():
+        return render_template('dashboard.html')
 
     return app
 
