@@ -61,6 +61,12 @@
                    aria-controls="list-python">
                     Python
                 </a>
+                <a class="list-group-item list-group-item-action"
+                   id="list-monitoring-list" data-bs-toggle="list"
+                   href="#list-monitoring" role="tab"
+                   aria-controls="list-monitoring">
+                    Monitoring
+                </a>
             </div>
         </div>
         <div class="col-6" >
@@ -120,6 +126,19 @@
                   - Subprocess library for automation <br>
                   - Automated mysql password generation every day <br>
                   - Automated mysql database backup <br>
+                </div>
+                <div class="tab-pane fade" id="list-monitoring"
+                     role="tabpanel"
+                     aria-labelledby="list-python-list">
+                  <b>Grafana: </b> <br> <br>
+                  - Configured in container <br>
+                  - Dashboard for containers and VM metrics <br>
+                  - Configured with Prometheus <br><br>
+                  <b>Prometheus:</b> <br>
+                    - Configured in container <br>
+                    - Configured to get metrics from containers and VM <br>
+                    - scraping from Node exporter and cAdvisor <br>
+
                 </div>
             </div>
         </div>
