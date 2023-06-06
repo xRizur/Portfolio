@@ -1,0 +1,6 @@
+.text-wrap {
+  white-space: normal;
+  }
+.bi-trash-fill:hover {
+    color: red !important;
+}

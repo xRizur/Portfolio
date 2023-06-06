@@ -1,0 +1,48 @@
+<!-- tasks.html -->
+{% extends 'base.html' %}
+{% block content %}
+<header class="text-center text-white bg-primary masthead">
+    <h2> Simple app </h2>
+</header>
+<section id="app">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST" class="mb-3">
+                <div class="input-group">
+                    <input type="text" name="task" placeholder="New task" class="form-control rounded-pill">
+                    <div class="input-group-append">
+                        <input type="submit" value="Add" class="btn btn-outline-secondary rounded-pill bg-dark">
+                    </div>
+                </div>
+            </form>
+
+            <ul class="list-group sortable">
+        {% for task in tasks %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="task-text">{{ task.task }}</span>
+                <form method="POST" class="edit-form" action="{{ url_for('tasks.edit_task', task_id=task.id) }}">
+                    <input type="text" name="task" class="edit-input form-control rounded-pill" value="{{ task.task }}" style="display: none;">
+                </form>
+                <div>
+                    <button class="btn btn-sm btn-outline-primary bg-primary edit-button d-inline-flex">
+                        <i class="bi bi-pencil-fill"></i>
+                    </button>
+                    <form method="POST" action="{{ url_for('tasks.delete_task', task_id=task.id) }}">
+                        <button type="submit" class="btn btn-sm">
+                            <i class="bi bi-trash-fill text-secondary hover-red"></i>
+                        </button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+</div>
+</section>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../static/assets/js/tasks.js"></script>
+{% endblock %}

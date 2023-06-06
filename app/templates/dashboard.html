@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="text-center text-white bg-primary masthead">
+  <h2> Monitoring example with Grafana and Prometheus (docker containers) <br><br>
+  You can use demo credentials to login to Grafana: <br>
+  Username: demo <br>
+    Password: demo <br> </h2>
+</header>
+<section id="technologies" class="technologies embed-responsive" style="min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <iframe src="http://localhost:3000/d/eab67a80-d0e4-4fc5-b830-bb12515a81ee/docker-and-system-monitoring?orgId=1&refresh=5m&from=1685726932265&to=1685813332265&kiosk" width="80%" height="100%"></iframe>
+</section>
+{% endblock %}

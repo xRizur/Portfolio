@@ -5,3 +5,9 @@ CREATE TABLE user (
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (userId)
 );
+CREATE TABLE tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    task VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(userId)
+);
