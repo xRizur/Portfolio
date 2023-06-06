@@ -32,7 +32,7 @@ services:
     env_file:
       - .env
     restart: always
-    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "app.create_app:create_app()"
+    command: gunicorn --bind 0.0.0.0:8000 --workers 4 "app:create_app()"
     ports:
       - 8000:8000
     volumes:
@@ -44,6 +44,8 @@ services:
     container_name: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+    ports:
+        - 3306:3306
     env_file:
       - .env
     volumes:
